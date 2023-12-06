@@ -12,6 +12,7 @@ import 'package:flame/src/timer.dart' as time;
 class FlappyBirdGame extends FlameGame with TapDetector, HasCollisionDetection {
   late Bird bird;
   time.Timer interval = time.Timer(Config.pipInterval, repeat: true);
+  bool isHit = false;
   @override
   Future<void> onLoad() async {
     addAll([Background(), Ground(), bird = Bird(), PipGroup()]);
